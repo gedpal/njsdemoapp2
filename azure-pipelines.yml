@@ -58,6 +58,7 @@ stages:
         targetPath: '$(Build.ArtifactStagingDirectory)'
       displayName: 'Download npm artifact'
 
+
     - task: Docker@2
       displayName: 'Build and Push Docker Image'
       inputs:
