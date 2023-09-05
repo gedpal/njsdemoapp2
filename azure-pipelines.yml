@@ -62,7 +62,7 @@ stages:
     - task: Docker@2
       displayName: 'Build and Push Docker Image'
       inputs:
-        containerRegistry: 'Azure ACR1'
+        containerRegistry: gpatfacr1.azurecr.io
         repository: 'njsdemoapp1'
         command: 'buildAndPush'
         Dockerfile: '$(Build.ArtifactStagingDirectory)/Dockerfile'
