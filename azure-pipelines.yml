@@ -62,8 +62,8 @@ stages:
     - task: Docker@2
       displayName: 'Build and Push Docker Image'
       inputs:
-        containerRegistry: 'GPA DH connect'
-        repository: 'gedpal/demo'
+        containerRegistry: 'Azure ACR1'
+        repository: 'njsdemoapp1'
         command: 'buildAndPush'
         Dockerfile: '$(Build.ArtifactStagingDirectory)/Dockerfile'
         tags: 
@@ -125,4 +125,4 @@ stages:
                manifests: |
                  $(Pipeline.Workspace)/Manifests/deployment.yml
                  $(Pipeline.Workspace)/Manifests/service.yml
-               containers: 'gedpal/demo:latest'
+               containers: 'njsdemoapp1:latest'
