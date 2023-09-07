@@ -121,9 +121,8 @@ stages:
            - task: KubernetesManifest@0
              inputs:
                action: 'deploy'
-               namespace: 'demoapp'
+               namespace: '$(app1k8namespace)'
                manifests: |
-                 $(Pipeline.Workspace)/Manifests/namespace.yml
                  $(Pipeline.Workspace)/Manifests/deployment.yml
                  $(Pipeline.Workspace)/Manifests/service.yml
                containers: 'njsdemoapp1:latest'
