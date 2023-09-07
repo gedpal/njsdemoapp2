@@ -63,7 +63,7 @@ stages:
       displayName: 'Build and Push Docker Image'
       inputs:
         containerRegistry: '$(imageRepo)'
-        repository: 'njsdemoapp1'
+        repository: 'njsdemoapp2'
         command: 'buildAndPush'
         Dockerfile: '$(Build.ArtifactStagingDirectory)/Dockerfile'
         tags: 
@@ -85,7 +85,7 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy to AKS
-    environment: 'k8stfdev.njsdemoapp1'
+    environment: 'k8stfdev.njsdemoapp2'
     pool: 
       vmImage: ubuntu-latest
     strategy:
@@ -122,8 +122,8 @@ stages:
            - task: KubernetesManifest@0
              inputs:
                action: 'deploy'
-               namespace: 'njsdemoapp1'
+               namespace: 'njsdemoapp2'
                manifests: |
                  $(Pipeline.Workspace)/Manifests/deployment.yml
                  $(Pipeline.Workspace)/Manifests/service.yml
-               containers: 'njsdemoapp1:latest'
+               containers: 'njsdemoapp2:latest'
