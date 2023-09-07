@@ -123,6 +123,7 @@ stages:
                action: 'deploy'
                namespace: 'demoapp'
                manifests: |
+                 $(Pipeline.Workspace)/Manifests/namespace.yml
                  $(Pipeline.Workspace)/Manifests/deployment.yml
                  $(Pipeline.Workspace)/Manifests/service.yml
                containers: 'njsdemoapp1:latest'
