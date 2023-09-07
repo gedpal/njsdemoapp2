@@ -118,6 +118,7 @@ stages:
                useLegacyPattern: false
                enableTransforms: false
                enableTelemetry: true
+
            - task: KubernetesManifest@0
              inputs:
                action: 'deploy'
