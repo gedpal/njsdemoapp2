@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: njsdemoapp1 
+  name: njsdemoapp2 
 spec:
   replicas: #replicaNo#
   selector:
     matchLabels:
-      app: njsdemoapp1
+      app: njsdemoapp2
   template:
     metadata:
       labels:
-        app: njsdemoapp1 
+        app: njsdemoapp2 
     spec:
       containers:
-        - name: njsdemoapp1 
-          image: gpatfacr1.azurecr.io/njsdemoapp1:latest
+        - name: njsdemoapp2 
+          image: gpatfacr1.azurecr.io/njsdemoapp2:latest
           ports:
           - containerPort: 3000
