@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: njsdemoapp2 
-          image: gpatfacr1.azurecr.io/njsdemoapp2:294
+          image: gpatfacr1.azurecr.io/njsdemoapp2:latest
           imagePullPolicy: Always
           ports:
           - containerPort: 3000
